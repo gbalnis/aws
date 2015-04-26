@@ -7,6 +7,7 @@
 # install pre-requisites
 sudo yum install gcc-c++ make
 sudo yum install git
+cd ~
 
 # install node.js
 git clone git://github.com/joyent/node.git
