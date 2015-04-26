@@ -22,3 +22,4 @@ git clone https://github.com/isaacs/npm.git
 cd npm
 sudo make install
 
+cd ~
