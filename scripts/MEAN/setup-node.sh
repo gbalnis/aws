@@ -18,6 +18,7 @@ make
 sudo make install
 
 # install npm
+cd ~
 git clone https://github.com/isaacs/npm.git
 cd npm
 sudo make install
