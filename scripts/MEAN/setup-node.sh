@@ -1,8 +1,12 @@
 #!/bin/bash
 
 # install pre-requisites
-sudo yum install gcc-c++ make
-sudo yum install git
+sudo -y yum install gcc-c++ make
+sudo -y yum install git
+
+# update in case you've forgotten
+sudo -y yum update
+
 cd ~
 
 # install node.js
@@ -18,3 +22,11 @@ cd ~
 git clone https://github.com/isaacs/npm.git
 cd npm
 sudo env PATH=$PATH:/usr/local/bin make install
+
+# install pm2
+cd ~
+sudo env PATH=$PATH:/usr/local/bin npm install pm2 --global
+
+# configure pm2 for startup
+# (!) ONLY as a user that will run the apps
+pm2 startup 
