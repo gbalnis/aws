@@ -1,11 +1,11 @@
 #!/bin/bash
 
 # install pre-requisites
-sudo -y yum install gcc-c++ make
-sudo -y yum install git
+sudo yum -y install gcc-c++ make
+sudo yum -y install git
 
 # update in case you've forgotten
-sudo -y yum update
+sudo yum -y update
 
 cd ~
 
@@ -29,4 +29,4 @@ sudo env PATH=$PATH:/usr/local/bin npm install pm2 --global
 
 # configure pm2 for startup
 # (!) ONLY as a user that will run the apps
-pm2 startup 
+pm2 startup amazon
