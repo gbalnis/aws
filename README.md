@@ -5,6 +5,10 @@ Currently deployment of node.js, npm and pm2 is implemented (pm2 requires your a
 
 Tested on Amazon Linux AMI 2015.03 (PV) - ami-1ccae774 on t1.micro
 
+Usage: 
+
+./setup-node.sh `node-version-tag`
+
 When the script finishes you should be able to see node working:
 
 $ node
