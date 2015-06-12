@@ -5,6 +5,12 @@ Installs Bamboo globally, deploys bmb.dev, builds the product from Stash, create
 
 Tested on Amazon Linux AMI 2015.03 (PV) - ami-1ccae774 on m1.small (ENOMEM on t1.micro)
 
+Usage:
+
+`./deploy-zetn.sh 0.0.0.0`
+
+Note that you must specify a valid semver string to for the build version. The string is currently not checked for syntactic validity - make sure it is valid.
+
 Prerequisites:
 * Stash account with read access
 * Bamboo hub configuration file (.bmb.hub.cfg.json) in $HOME including authentication token (required when there is no browser to perform authentication with the hub). Set the desired hub to default.
