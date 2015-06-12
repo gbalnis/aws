@@ -1,5 +1,10 @@
 #!/bin/bash
 
+if [ "$1" == "" ]; then
+  echo Please specify a desired node.js version. See current version on https://nodejs.org/download.
+  exit 1
+fi
+
 # install pre-requisites
 sudo yum -y install gcc-c++ make
 sudo yum -y install git
@@ -12,7 +17,14 @@ cd ~
 # install node.js
 git clone git://github.com/joyent/node.git
 cd node
-# git checkout v0.12.2 (see current version on https://nodejs.org/download/)
+
+# see if the specified version is valid
+if ! git tag | grep $1; then
+   echo There is no tag corresponding to the specified version.
+   exit 1
+fi
+
+git checkout $1
 ./configure
 make
 sudo env PATH=$PATH:/usr/local/bin make install
