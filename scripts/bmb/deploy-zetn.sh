@@ -39,7 +39,7 @@ tar -xzf ~/zetn.$1.app.tgz -C ~
 
 # install node dependencies
 cd ~/dist/app
-node install
+npm install
 
 # create pm2 config json
 pm2conf="{
