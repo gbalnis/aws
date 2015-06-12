@@ -1,5 +1,12 @@
 #!/bin/bash
 
+# check if the version is specified
+# version string is not checked against valid semver syntax - expect surprises if it is not!
+if [ "$1" == "" ]; then
+  echo Please specify a build version. Version must be a valid semver string.
+  exit 1
+fi
+
 # check if $HOME/.bmb.hub.cfg.json exists, exit if not
 if ! [ -f "$HOME/.bmb.hub.cfg.json" ]
 	then
@@ -22,17 +29,17 @@ cd zeteo
 bmb install
 
 # build the product
-bmb build
+bmb build --version $1
 
 # create tarball with the app
-tar -czf zetn.app.tgz ./dist
-
-# create tarball with dependencies
-tar -czf zetn.modules.tgz ./node_modules
+tar -czf ~/zetn.$1.app.tgz ./dist
 
 # deploy standalone
-tar -xzf ~/zeteo/zetn.app.tgz -C ~
-tar -xzf ~/zeteo/zetn.modules.tgz -C ~/dist
+tar -xzf ~/zetn.$1.app.tgz -C ~
+
+# install node dependencies
+cd ~/dist/app
+node install
 
 # create pm2 config json
 pm2conf="{
