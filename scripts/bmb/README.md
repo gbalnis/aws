@@ -12,7 +12,7 @@ Prerequisites:
 * npm.js
 * pm2 (if you want to demonize node)
 
-When the script finishes, configure ~/dist/vars.json to point to desired Velvet endpoint and you should be able to run the application by calling either
+When the script finishes, configure ~/dist/app/vars.json to point to desired Velvet endpoint and you should be able to run the application by calling either
 
 $ pm2 start zeteo.pm2.json
 
