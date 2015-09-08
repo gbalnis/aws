@@ -17,6 +17,10 @@ fi
 # install bmb tools
 sudo env PATH=$PATH:/usr/local/bin npm install http://bmb.wolterskluwer.com/install -g
 
+# issue https://github.com/gbalnis/aws/issues/12
+sudo touch /usr/local/lib/node_modules/bmb.cli/cli.debug.log
+sudo chmod a+w /usr/local/lib/node_modules/bmb.cli/cli.debug.log
+
 # get the app
 cd ~
 git clone https://stash.bw-sl.com/scm/zet/zeteo.git
