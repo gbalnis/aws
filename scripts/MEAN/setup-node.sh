@@ -1,7 +1,7 @@
 #!/bin/bash
 
 if [ "$1" == "" ]; then
-  echo Please specify a desired node.js version. See current version on https://nodejs.org/download.
+  echo Please specify a desired node.js version. See current version on https://github.com/nodejs/node/releases.
   exit 1
 fi
 
@@ -15,7 +15,7 @@ sudo yum -y update
 cd ~
 
 # install node.js
-git clone git://github.com/joyent/node.git
+git clone git://github.com/nodejs/node.git
 cd node
 
 # see if the specified version is valid
